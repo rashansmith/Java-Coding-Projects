@@ -34,8 +34,10 @@ public class webBrowser extends JFrame
 				new HyperlinkListener()
 				{
 					//do something only if user clicks the link
-					public void hyperlinkUpdate(HyperlinkEvent event){
-						if(event.getEventType()== HyperlinkEvent.EventType.ACTIVATED){
+					public void hyperlinkUpdate(HyperlinkEvent event)
+					{
+						if(event.getEventType()== HyperlinkEvent.EventType.ACTIVATED)
+						{
 							loadStuff(event.getURL().toString());
 						}
 					}
@@ -49,16 +51,19 @@ public class webBrowser extends JFrame
 	
 	//website user inputs
 	private void loadStuff(String userText){
-		try{
+		try
+		{
 			display.setPage(userText);
 			addressBar.setText(userText);
-		}catch(Exception e){
+		}
+		catch(Exception e)
+		{
 			JOptionPane.showMessageDialog(null, "Get it together man. That was not a URL");
 			System.out.println("Get it together man. That was not a valid url");
 		}
 	}
 	
-	
+	//executing the browser
 	public static void main (String[] args)
 	{
 		webBrowser one = new webBrowser();
